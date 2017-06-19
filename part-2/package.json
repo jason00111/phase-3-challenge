@@ -6,6 +6,7 @@
   },
   "scripts": {
     "db:create": "createdb grocery_store",
-    "db:init": "psql grocery_store < schema.sql"
+    "db:init": "psql grocery_store < schema.sql",
+    "db:seed": "psql --set csvPath=\"'$(pwd)/grocery.csv'\" grocery_store < load-data.sql"
   }
 }
