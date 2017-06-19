@@ -12,7 +12,7 @@ CREATE TABLE item (
 CREATE TABLE purchase (
   id serial PRIMARY KEY,
   shopper varchar(40),
-  creation_date timestamp
+  creation_date timestamp DEFAULT now()
 );
 
 CREATE TABLE item_purchase (
