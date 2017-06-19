@@ -13,6 +13,10 @@ it('itemsInSection("bulk") should return "Flour", "Pasta", and "Rice"',
       expect(names).to.include('Rice')
       done()
     })
+    .catch(err => {
+      console.error(err)
+      done()
+    })
   }
 )
 
@@ -23,12 +27,20 @@ it('cheapItems() should return "Fish" as the first item and "Honey" as the last 
       expect(results[results.length - 1].price).to.equal('$9.31')
       done()
     })
+    .catch(err => {
+      console.error(err)
+      done()
+    })
   }
 )
 
-it('countItemsInSection() should return 5', done => {
-  countItemsInSection().then(result => {
-    expect(result).to.equal(5)
+it('countItemsInSection("packaged") should return 5', done => {
+  countItemsInSection('packaged').then(result => {
+    expect(result).to.equal('5')
+    done()
+  })
+  .catch(err => {
+    console.error(err)
     done()
   })
 })
