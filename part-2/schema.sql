@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS item_purchase;
 CREATE TABLE item (
   id serial PRIMARY KEY,
   name varchar(40),
-  price int
+  price money
 );
 
 CREATE TABLE section (
