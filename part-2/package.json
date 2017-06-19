@@ -1,12 +1,15 @@
 {
   "dependencies": {
-    "chai": "^4.0.2",
-    "mocha": "^3.4.2",
     "pg-promise": "^5.9.3"
   },
   "scripts": {
     "db:create": "createdb grocery_store",
     "db:init": "psql grocery_store < schema.sql",
-    "db:seed": "psql --set csvPath=\"'$(pwd)/grocery.csv'\" grocery_store < load-data.sql"
+    "db:seed": "psql --set csvPath=\"'$(pwd)/grocery.csv'\" grocery_store < load-data.sql",
+    "test": "mocha database_test.js"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
   }
 }
