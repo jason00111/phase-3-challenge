@@ -23,7 +23,10 @@ DROP TABLE temp;
 
 INSERT INTO shopper (name) VALUES ('Peter'), ('Tony'), ('Steve');
 
-INSERT INTO purchase (shopper_id) VALUES (1), (2), (3);
+INSERT INTO purchase (shopper_id, creation_date)
+VALUES  (1, now()),
+        (2, now() + interval '1 hour'),
+        (3, now() + interval '2 hours');
 
 INSERT INTO item_purchase (item_id, purchase_id)
 VALUES  (1, 1),
