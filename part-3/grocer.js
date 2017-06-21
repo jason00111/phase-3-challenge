@@ -1,17 +1,10 @@
 const cartButton = document.getElementById('cart-button')
-
 const cartModal = document.getElementById('cart-modal')
-
 const modalCloseButton = document.getElementById('modal-close-button')
-
 const clearCartButton = document.getElementById('clear-cart-button')
-
 const itemCountSpan = document.getElementById('cart-item-count')
-
 const cartItemsUl = document.querySelectorAll('#cart-modal .item-section')[0]
-
 const cartTotalSpan = document.getElementById('cart-total')
-
 const addToCartButtons = document.querySelectorAll('.item button')
 
 cartButton.addEventListener('click', () =>

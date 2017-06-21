@@ -130,5 +130,20 @@ body {
   width: 50%;
   margin: auto;
   margin-top: 10%;
-  padding: 30px;
+  padding: 10px;
+}
+
+#modal-close-button {
+  height: 30px;
+  width: 30px;
+  font-size: 20px;
+}
+
+#modal-footer {
+  margin-top: 32px;
+  font-size: 18px;
+}
+
+#modal-footer button {
+  font-size: 18px;
 }
