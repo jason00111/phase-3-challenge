@@ -35,6 +35,7 @@ it('itemsInSection("bulk") should return "Flour", "Pasta", and "Rice"',
       expect(results).to.be.an('array').with.lengthOf(3)
       expect(results[0]).to.have.property('id')
       expect(results[0]).to.have.property('name')
+
       const names = results.map(result => result.name)
       expect(names).to.include('Flour')
       expect(names).to.include('Pasta')
@@ -51,6 +52,10 @@ it('itemsInSection("bulk") should return "Flour", "Pasta", and "Rice"',
 it('cheapItems() should return "Fish" as the first item and "Honey" as the last item',
   done => {
     cheapItems().then(results => {
+      expect(results).to.be.an('array').with.lengthOf(25)
+      expect(results[0]).to.have.property('id')
+      expect(results[0]).to.have.property('price')
+      
       expect(results[0].price).to.equal('$0.49')
       expect(results[results.length - 1].price).to.equal('$9.31')
       done()
