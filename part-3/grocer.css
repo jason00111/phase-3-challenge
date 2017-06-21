@@ -116,9 +116,19 @@ body {
 
 /* MODAL */
 #cart-modal {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
   visibility: hidden;
+}
+
+#cart-modal-content {
+  background: white;
+  width: 50%;
+  margin: auto;
+  margin-top: 10%;
+  padding: 30px;
 }
