@@ -2,7 +2,32 @@ const chai = require('chai')
 
 const expect = chai.expect
 
-const { itemsInSection, cheapItems, countItemsInSection } = require('./database.js')
+const {
+  allItems,
+  itemsInSection,
+  cheapItems,
+  countItemsInSection,
+  mostRecentOrders,
+  lastShopperName,
+  orderTotal
+} = require('./database.js')
+
+it('allItems() should return all the itms\' id\'s, names, prices, and sections',
+  done => {
+    allItems().then(results => {
+      expect(results).to.be.an('array').with.lengthOf(41)
+      expect(results[0]).to.have.property('id')
+      expect(results[0]).to.have.property('name')
+      expect(results[0]).to.have.property('price')
+      expect(results[0]).to.have.property('section')
+      done()
+    })
+    .catch(err => {
+      console.error(err)
+      done()
+    })
+  }
+)
 
 it('itemsInSection("bulk") should return "Flour", "Pasta", and "Rice"',
   done => {
