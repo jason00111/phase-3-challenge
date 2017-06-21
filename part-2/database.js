@@ -3,7 +3,7 @@ const pgp = require('pg-promise')()
 const db = pgp({ database: 'grocery_store' })
 
 const allItems = () => db.query(
-  `SELECT item.id, item.name, section.name AS section
+  `SELECT item.id, item.name, item.price, section.name AS section
   FROM item
   JOIN item_section ON item.id = item_section.item_id
   JOIN section ON section.id = item_section.section_id`
