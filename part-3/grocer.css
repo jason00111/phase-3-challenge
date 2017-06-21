@@ -113,3 +113,12 @@ body {
 .item-price {
   flex: 0;
 }
+
+/* MODAL */
+#cart-modal {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background: white;
+  visibility: hidden;
+}
