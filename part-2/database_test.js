@@ -55,7 +55,7 @@ it('cheapItems() should return "Fish" as the first item and "Honey" as the last 
       expect(results).to.be.an('array').with.lengthOf(25)
       expect(results[0]).to.have.property('id')
       expect(results[0]).to.have.property('price')
-      
+
       expect(results[0].price).to.equal('$0.49')
       expect(results[results.length - 1].price).to.equal('$9.31')
       done()
@@ -69,6 +69,7 @@ it('cheapItems() should return "Fish" as the first item and "Honey" as the last 
 
 it('countItemsInSection("packaged") should return 5', done => {
   countItemsInSection('packaged').then(result => {
+    expect(result).to.be.a('string')
     expect(result).to.equal('5')
     done()
   })
