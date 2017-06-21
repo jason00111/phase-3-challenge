@@ -32,6 +32,9 @@ it('allItems() should return all the itms\' id\'s, names, prices, and sections',
 it('itemsInSection("bulk") should return "Flour", "Pasta", and "Rice"',
   done => {
     itemsInSection('bulk').then(results => {
+      expect(results).to.be.an('array').with.lengthOf(3)
+      expect(results[0]).to.have.property('id')
+      expect(results[0]).to.have.property('name')
       const names = results.map(result => result.name)
       expect(names).to.include('Flour')
       expect(names).to.include('Pasta')
