@@ -78,3 +78,40 @@ it('countItemsInSection("packaged") should return 5', done => {
     done()
   })
 })
+
+it('mostRecentOrders() finds the id\'s and order dates for the 10 most recent orders', done => {
+  mostRecentOrders().then(results => {
+    expect(results).to.be.an('array').with.lengthOf(3)
+    done()
+  })
+  .catch(err => {
+    console.error(err)
+    done()
+  })
+})
+
+it('lastShopperName() finds the shopper\'s name who made the most recent order', done => {
+  lastShopperName().then(result => {
+    expect(result).to.be.a('string')
+    expect(result).to.equal('Steve')
+    done()
+  })
+  .catch(err => {
+    console.error(err)
+    done()
+  })
+})
+
+it('orderTotal(orderId) finds the total cost of an order', () => {
+  orderTotal(3).then(result => {
+    console.log('hello?')
+    console.log('hello?')
+    expect(result).to.be.a('string')
+    expect(result).to.equal('$35.62')
+    done()
+  })
+  .catch(err => {
+    console.error(err)
+    done()
+  })
+})
